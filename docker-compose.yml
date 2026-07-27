@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: danau-toba-site
+    restart: unless-stopped
+    ports:
+      # Port 80 di VM sudah dipakai project todo-cicd,
+      # jadi situs ini pakai port 8081 supaya tidak bentrok.
+      - "8081:80"
